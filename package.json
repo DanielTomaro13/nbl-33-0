@@ -1,0 +1,16 @@
+{
+  "name": "nbl-33-0",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Build an all-time NBL team across clubs and seasons and chase a perfect 33-0 season — plus a vault of basketball mini-games, standings, stats and player profiles.",
+  "workspaces": [
+    "pipeline",
+    "web"
+  ],
+  "scripts": {
+    "data": "npm run build -w pipeline",
+    "dev": "npm run dev -w web",
+    "build": "npm run build -w web",
+    "start": "npm run start -w web"
+  }
+}

@@ -1,0 +1,34 @@
+name: Weekly NBL data refresh
+
+# Re-runs the live NBL (rosetta) pipeline weekly during the season and commits
+# the updated JSON. The deploy workflow then redeploys automatically on the push.
+# The pipeline only writes its datasets on a fully successful run, so a failed
+# fetch leaves the committed dataset untouched and the site is never left empty.
+on:
+  schedule:
+    - cron: "0 13 * * 2" # Tuesdays 13:00 UTC — after the weekend/Monday NBL games
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Refresh data from the live NBL API
+        # Ladders, fixtures, finals, player stats, match box scores and brackets
+        # are all produced by the one pipeline run.
+        run: npm run data || echo "Live refresh failed — keeping the committed dataset."
+      - name: Commit refreshed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add web/public/data
+          git diff --staged --quiet || git commit -m "data: weekly NBL refresh"
+          git push

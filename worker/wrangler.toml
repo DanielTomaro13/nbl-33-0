@@ -1,0 +1,9 @@
+name = "nbl330-leaderboard"
+main = "src/index.ts"
+compatibility_date = "2026-06-01"
+
+# Optional global leaderboard. Create your own KV namespace and paste its id:
+#   wrangler kv namespace create BOARD
+kv_namespaces = [
+  { binding = "BOARD", id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID" }
+]
