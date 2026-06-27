@@ -135,7 +135,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           defer
           src="https://static.cloudflareinsights.com/beacon.min.js"
           strategy="afterInteractive"
-          data-cf-beacon='{"token": "d59a007182594e61a9820fdbc5f6f742"}'
+          data-cf-beacon='{"token": "f0914e35f615486389cc2b6210cfab26"}'
         />
       </body>
     </html>
