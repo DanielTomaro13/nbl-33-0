@@ -2,6 +2,8 @@
 
 > **Status, September 2026:** GitHub Actions are currently paused on this repo, so automated data refreshes and deploys are not running. The data and any live site reflect the last build.
 
+[![Screenshot of the live site](.github/screenshot.png)](https://nbl33-0.com/)
+
 > Build an all-time NBL team and chase a perfect 33-0 season — plus a vault of basketball mini-games, standings and stats.
 > Live at **[nbl33-0.com](https://nbl33-0.com)**.
 
