@@ -88,11 +88,12 @@ export default function MarketMoverPromo() {
           className="mm-promo-logo"
           src={`${BASE}/marketmover-mark.png`}
           alt=""
-          width={48}
-          height={48}
+          width={84}
+          height={84}
         />
         <div className="mm-promo-copy">
-          <p id={titleId}>MarketMover — live prices and model markets in one place. More markets coming.</p>
+          <h2 id={titleId}>MarketMover</h2>
+          <p>Live prices and model markets in one place. More markets coming.</p>
         </div>
         <a className="btn btn-primary mm-promo-cta" href={HREF} onClick={dismiss}>
           Open MarketMover
