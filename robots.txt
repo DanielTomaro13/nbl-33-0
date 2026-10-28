@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://nbl33-0.com
+Sitemap: https://nbl33-0.com/sitemap.xml
