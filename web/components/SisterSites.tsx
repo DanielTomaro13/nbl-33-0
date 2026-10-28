@@ -13,6 +13,12 @@ const SITES = [
   { key: "tennis", label: "Tennis Slam", href: "https://grandtennisslam.com" },
 ];
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+/** Partner link. UTM stays on the sister bar so the popup can use its own medium. */
+const MARKETMOVER_HREF =
+  "https://www.marketmover.net?utm_source=nbl33-0&utm_medium=sister_bar&utm_campaign=crosspromo";
+
 export default function SisterSites({ active }: { active: string }) {
   return (
     <div style={{ background: "#04080699", borderBottom: "1px solid var(--border)" }}>
@@ -27,6 +33,10 @@ export default function SisterSites({ active }: { active: string }) {
             <a key={s.key} className="sister-link" href={s.href}>{s.label}</a>
           )
         )}
+        <a className="sister-link sister-link-mark" href={MARKETMOVER_HREF}>
+          <img src={`${BASE}/marketmover-mark.png`} alt="" width={16} height={16} />
+          MarketMover
+        </a>
       </div>
     </div>
   );
